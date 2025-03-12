@@ -1,0 +1,394 @@
+ID,Test Case,Precondition,Test Steps,Equivalence Class,Boundary Values,Test Data for Equivalence Class,Test Data for Boundary Values,Expected Result ,Actual Result,Actual Result in Chrome 1280x720  ,Actual Result in Opera 1280x720,Jira Bug Link
+1,First Name Field: user can put Latin letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter Latin letters in First Name field,Latin letters(valid),,Stacey,,The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+2,First Name Field: user can put dashes,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dashes in First Name field,dashes(valid),,Ann-Marie,,The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+3,First Name Field: user can put spaces,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter spaces in First Name field,spaces(valid),,Joe Raegan,,The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+4,First Name Field: user cannot put non-Latin letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter non-Latin letters in First Name field,non-Latin letters(invalid),,יניב,,"The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-1?atlOrigin=eyJpIjoiMDY0NDQ0MGFmMmI5NDJlMWI2NjYzNDVmMzlhOGVmOTEiLCJwIjoiaiJ9
+5,First Name Field: user cannot put special characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter special characters in First Name field,special characters(invalid),,John&Joseph,,"The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-2?atlOrigin=eyJpIjoiMWUwZTgwOTFhNjY2NGRmODlmMmM4NThiNDc0OTYwOWUiLCJwIjoiaiJ9
+6,First Name Field: user cannot put numbers,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter numbers in First Name field,numbers(invalid),,John3,,"The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-3?atlOrigin=eyJpIjoiMzg3ZjU1YWQ4OTY4NGRlMzgxZTQ1MDhiNDU4NjA2MDEiLCJwIjoiaiJ9
+7,First Name Field: user cannot put commas,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter commas in First Name field,commas(invalid),,"Mehr,Lin",,"The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-4?atlOrigin=eyJpIjoiNTgxNTM0MGVlYTYwNDg0MThhYmI3OTU0MjQ1MzliODgiLCJwIjoiaiJ9
+8,First Name Field: user cannot put 1 character,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 1 character in First Name field,<2 characters(invalid),"1 character, 2 characters, 3 characters",D,"D, Ed, Leo","The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-5?atlOrigin=eyJpIjoiMjI3NWM5ZmU3MDdmNDk1Zjk4NjczZDU3MGI5YWIzYjgiLCJwIjoiaiJ9
+9,First Name Field: user can put 2 characters ,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 2 characters in First Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Ed,"D, Ed, Leo, Alexanderjames, Ashleyelizabeth, Lankineebhanjana",The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+10,First Name Field: user can put 3 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 3 characters in First Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Leo,"D, Ed, Leo, Alexanderjames, Ashleyelizabeth, Lankineebhanjana",The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+11,First Name FIeld: user can put 14 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 14 characters in First Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Alexanderjames,"D, Ed, Leo, Alexanderjames, Ashleyelizabeth, Lankineebhanjana",The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+12,First Name Field: user can put 15 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 15 characters in First Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Ashleyelizabeth,"D, Ed, Leo, Alexanderjames, Ashleyelizabeth, Lankineebhanjana",The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+13,First Name Field: user cannot put 16 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 16 characters in First Name field,>15 characters(invalid),"14 characters, 15 characters, 16 characters",Lankineebhanjana,"Alexanderjames, Ashleyelizabeth, Lankineebhanjana","The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-6?atlOrigin=eyJpIjoiNTdjNGIwMDJiMTNjNDAyZThlZDYzMzY0MTIzZmRlMzUiLCJwIjoiaiJ9
+14,First Name Field: user cannot put dots,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dots in First Name field,dots(invalid),,.Prague,,"The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-7?atlOrigin=eyJpIjoiMTYzYzhhNzc2ZDg1NGQ4YmE2ZDdkZjgxMTlhY2JmNTEiLCJwIjoiaiJ9
+15,First Name Field: user can put capital letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter capital letters in First Name field,capital letters(valid),,Leo,,The name is accepted,The name is accepted,The name is accepted,The name is accepted,
+16,First Name Field: user cannot leave the field empty(0 characters),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Leave the First Name field empty,empty field(0 character)(invalid),,,,"The field is highlighted in red. The error text is
+""Enter correct name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-8?atlOrigin=eyJpIjoiZjQwMDMyZGNlZjZhNDJlODlmZjJkNjE1NTBlMjM3MmMiLCJwIjoiaiJ9
+17,Last Name Field: user can put Latin letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter Latin letters in Last Name field,Latin letters(valid),,Bowie,,The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+18,Last Name Field: user can put dashes,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dashes in Last Name field,dashes(valid),,X-Zhang,,The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+19,Last Name Field: user can put spaces,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter spaces in Last Name field,spaces(valid),,X Zhang,,The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+20,Last Name Field: user cannot put non-Latin letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter non-Latin letters in Last Name field,non-Latin letters(invalid),,לוי,,"The field is highlighted in red, and the error text
+""Enter a valid last name""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-9?atlOrigin=eyJpIjoiNjVlNGEyZjc2ZmQwNDBmMTkwZDQ4ZWJlMWZkMjY4YTIiLCJwIjoiaiJ9
+21,Last Name Field: user cannot put special characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter special characters in Last Name field,special characters(invalid),,Bowie$,,"The field is highlighted in red, and the error text
+""Enter a valid last name""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-10?atlOrigin=eyJpIjoiYzY4OTRkZjc5MzQ3NDg4YTgzYTgwMmYyZmJlMWVkOWEiLCJwIjoiaiJ9
+22,Last Name Field: user cannot put numbers,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter numbers in Last Name field,numbers(invalid),,Zhang56,,"The field is highlighted in red, and the error text
+""Enter a valid last name""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-11?atlOrigin=eyJpIjoiN2RmYzFiODMyZjRjNDAxMmExYjhhN2Y4ZDkxYjY0NzEiLCJwIjoiaiJ9
+23,Last Name Field: user cannot put commas,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter commas in Last Name field,commas(invalid),,"Bowie,Zhang",,"The field is highlighted in red, and the error text
+""Enter a valid last name""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-12?atlOrigin=eyJpIjoiMzVmNjU0Mzc0YzhkNDkxZmI3MjNiNDRlYTkwYmI0MmEiLCJwIjoiaiJ9
+24,Last Name Field: user cannot put 1 character,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 1 character in Last Name field,<2 characters(invalid),"1 character, 2 characters, 3 characters",C,"C, Bo, Bon","The field is highlighted in red, and the error text
+""Enter a valid last name""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-13?atlOrigin=eyJpIjoiZTdkMDQxNTg2ZWY2NGFhMDkxZDViZTBhMzg3YzkzYjQiLCJwIjoiaiJ9
+25,Last Name Field: user can put 2 characters ,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 2 characters in Last Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Bo,"C, Bo, Bon, Christoffersen, Shaykhlislamova, Shaykhlislamovna",The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+26,Last Name Field: user can put 3 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 3 characters in Last Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Bon,"C, Bo, Bon, Christoffersen, Shaykhlislamova, Shaykhlislamovna",The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+27,Last Name FIeld: user can put 14 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 14 characters in Last Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Christoffersen,"C, Bo, Bon, Christoffersen, Shaykhlislamova, Shaykhlislamovna",The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+28,Last Name Field: user can put 15 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 15 characters in Last Name field,2-15 characters(valid),"1 character, 2 characters, 3 characters, 14 characters, 15 characters, 16 characters",Shaykhlislamova,"C, Bo, Bon, Christoffersen, Shaykhlislamova, Shaykhlislamovna",The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+29,Last Name Field: user cannot put 16 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 16 characters in Last Name field,>15 characters(invalid),"14 characters, 15 characters, 16 characters",Shaykhlislamovna,"Christoffersen, Shaykhlislamova, Shaykhlislamovna","The field is highlighted in red, and the error text
+""Enter a valid last name""",The last name is accepted,The last name is accepted,The last name is accepted,https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-14?atlOrigin=eyJpIjoiZWEyNzYzMWU1Y2NmNDUxNThkODA4NWI1ZTViMzc2Y2IiLCJwIjoiaiJ9
+30,Last Name Field: user cannot put dots,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dots in Last Name field,dots(invalid),,Bon.d,,"The field is highlighted in red, and the error text
+""Enter a valid last name""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-15?atlOrigin=eyJpIjoiZGIyYTBkNzA0MThhNGY0MzhmOTc1NjAwYjM5ZTBkZWQiLCJwIjoiaiJ9
+31,Last Name Field: user can enter capital letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter capital letters in Last Name field,capital letters(valid),,Bowie,,The last name is accepted,The last name is accepted,The last name is accepted,The last name is accepted,
+32,Last Name Field: user cannot leave the field empty(0 characters),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",-Leave Last Name field empty,empty field(0 character)(invalid),,,,"The field is highlighted in red, and the error text
+""Enter a valid last name""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""","The field is highlighted in red. The error text is
+""Enter a valid name.""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-16?atlOrigin=eyJpIjoiMTZjZmNjMTk3N2UzNDczOTgyNThmM2I0ZmFkZDVlNjAiLCJwIjoiaiJ9
+33,Address: user can put Latin characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter Latin letters in Address field,Latin letters(valid),,Bundy Drive 5,,The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+34,Address: user cannot put non-Latin characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter non-Latin letters in Address field,non-Latin letters(invalid),,钱市胡同,,"The field is highlighted in
+red, and the error text ""Enter a valid
+address""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-17?atlOrigin=eyJpIjoiZTZkZGRjYmRkZDZlNDA3MzliOTI4YzlkYTM0YTZlZWQiLCJwIjoiaiJ9
+35,Address: user can put numbers,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter numbers in Address field,numbers(valid),,Bundy Drive 5,,The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+36,Address: user can put dashes,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dashes in Address field,dashes(valid),,Sunset-blvd,,The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+37,Address: user can put dots,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dots in Address field,dots(valid),,Mulholland Dr.,,The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+38,Address: user can put commas,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter commas in Address field,commas(valid),,"Commodore Sloat Dr, 5",,The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+39,Address: user can put spaces,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter spaces in Address field,spaces(valid),,"Commodore Sloat Dr, 5",,The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+40,Address: user cannot put special characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter special characters in Address field,special characters(invalid),,"Commodore Sloat Dr, $",,"The field is highlighted in
+red, and the error text ""Enter a valid
+address""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-18?atlOrigin=eyJpIjoiNTc1MDUzYzM5NzVjNDE2MWIwNDRjZDhhNWZiMjEwNDQiLCJwIjoiaiJ9
+41,Address: user can put capital letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter capital letters in Address field,capital letters(valid),,"Commodore Sloat Dr, 5",,The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+42,Address: user cannot leave the field empty(0 characters),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Leave the Address field empty,empty field(0 character)(valid),,,,"The field is highlighted in
+red, and the error text ""Enter a valid
+address""",The address is accepted,The address is accepted,The address is accepted,https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-33?atlOrigin=eyJpIjoiZmJiMzhkYTlhZTAxNDE1YmI5ZWZiOGJhNTM5MmE2Y2YiLCJwIjoiaiJ9
+43,Address: user cannot put 4 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 4 characters in Address field,<5 characters(invalid),"4 characters, 5 characters, 6 characters",Blvd,"Blvd, Mosco, Sunset","The field is highlighted in
+red, and the error text ""Enter a valid
+address""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-20?atlOrigin=eyJpIjoiYjg1N2VjYjNmZGI5NDM2MzhiYWU0MzM5OTE5MjJlYjMiLCJwIjoiaiJ9
+44,Address: user can put 5 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 5 characters in Address field,5-50 characters(valid),"4 characters, 5 characters, 6 characters, 49 characters, 50 characters, 51 characters",Mosco,"Blvd; Mosco; Sunset; General Thaddeus Kosciuszko Thaddeus Kosciuszko 5; Astronaut Ellison S. Onizuka Street Onizuka St, 54; Astronaut Ellison S. Onizuka Street Onizuka 5 bldng",The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+45,Address: user can put 6 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 6 characters in Address field,5-50 characters(valid),"4 characters, 5 characters, 6 characters, 49 characters, 50 characters, 51 characters",Sunset,"Blvd; Mosco; Sunset; General Thaddeus Kosciuszko Thaddeus Kosciuszko 5; Astronaut Ellison S. Onizuka Street Onizuka St, 54; Astronaut Ellison S. Onizuka Street Onizuka 5 bldng",The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+46,Address: user can put 49 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 49 characters in Address field,5-50 characters(valid),"4 characters, 5 characters, 6 characters, 49 characters, 50 characters, 51 characters",General Thaddeus Kosciuszko Thaddeus Kosciuszko 5,"Blvd; Mosco; Sunset; General Thaddeus Kosciuszko Thaddeus Kosciuszko 5; Astronaut Ellison S. Onizuka Street Onizuka St, 54; Astronaut Ellison S. Onizuka Street Onizuka 5 bldng",The address is accepted,The address is accepted,The address is accepted,The address is accepted,
+47,Address: user can put 50 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 50 characters in Address field,5-50 characters(valid),"4 characters, 5 characters, 6 characters, 49 characters, 50 characters, 51 characters","Astronaut Ellison S. Onizuka Street Onizuka St, 54","Blvd; Mosco; Sunset; General Thaddeus Kosciuszko Thaddeus Kosciuszko 5; Astronaut Ellison S. Onizuka Street Onizuka St, 54; Astronaut Ellison S. Onizuka Street Onizuka 5 bldng",The address is accepted,"The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-21?atlOrigin=eyJpIjoiNDVmOTViNWI4ZTY1NDY2OWJmYTBlZTlhYWRlNmJkYjAiLCJwIjoiaiJ9
+48,Address: user cannot put 51 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 51 characters in Address field,>50 characters(invalid),"49 characters, 50 characters, 51 characters",Astronaut Ellison S. Onizuka Street Onizuka 5 bldng,"General Thaddeus Kosciuszko Thaddeus Kosciuszko 5; Astronaut Ellison S. Onizuka Street Onizuka St, 54; Astronaut Ellison S. Onizuka Street Onizuka 5 bldng","The field is highlighted in
+red, and the error text ""Enter a valid
+address""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""","The field is highlighted in
+red, and the error text ""Enter a valid
+number""",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-22?atlOrigin=eyJpIjoiM2NiMDNiMzU0OGIxNGM2ZmE4ZmU4NmIyYzI0NjcwODkiLCJwIjoiaiJ9
+49,Address: the user can put space at the beginning of the Address field,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter address with a space at the beginning in Address field,space at the beginning of address(valid),, Sunset 5,,Spaces at the beginning of the Address field are trimmed when the field is not in the focus,Spaces at the beginning of the Address field are trimmed when the field is not in the focus,Spaces at the beginning of the Address field are trimmed when the field is not in the focus,Spaces at the beginning of the Address field are trimmed when the field is not in the focus,
+50,Address: the user can put space at the end of the Address field,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter address with a space at the end in Address field,space at the end of address(valid),,Sunset 5 ,,Spaces at the end of the Address field are trimmed when the field is not in the focus,Spaces at the end of the Address field are trimmed when the field is not in the focus,Spaces at the end of the Address field are trimmed when the field is not in the focus,Spaces at the end of the Address field are trimmed when the field is not in the focus,
+51,Subway station: user cannot leave the field empty,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Leave the Subway Station field empty,empty field(0 character)(valid),,,,"The field is highlighted in red. The
+error text is ""Enter a valid address""
+","The field is highlighted in red. The
+error text is ""Enter a valid address""
+","The field is highlighted in red. The
+error text is ""Enter a valid address""
+","The field is highlighted in red. The
+error text is ""Enter a valid address""
+",
+52,Subway station: user have to choose the Los Angeles subway station from list,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Choose station from dropdown list,list of Los Angeles stations(valid),,Avalon,,"Dropdown list show subway stations of Los Angeles, every station is clickable","Dropdown list show subway stations of Los Angeles, every station is clickable","Dropdown list show subway stations of Los Angeles, every station is clickable","Dropdown list show subway stations of Los Angeles, every station is clickable",
+53,Phone: user cannot leave the field empty,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Leave Phone field empty,empty field(0 character)(invalid),,,,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-23?atlOrigin=eyJpIjoiMGMxNDExNTQzZDdlNGUxZDg4ODE0ZWYxMThhODgxODkiLCJwIjoiaiJ9
+54,Phone: user can put numbers,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter numbers in Phone field,numbers(valid),,+972215425232,,Phone number is accepted,Phone number is accepted,Phone number is accepted,Phone number is accepted,
+55,Phone: user cannot put Latin letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter Latin letters in Phone field,Latin letters(invalid),,97221542523S,,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-24?atlOrigin=eyJpIjoiYWJhODU1MzdlOTA1NDNkZTk5NjExMTNjMWQxYWYyYTAiLCJwIjoiaiJ9
+56,Phone: user cannot put non-Latin letters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter non-Latin letters in Phone field,non-Latin letters(invalid),,97221542523ב,,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-25?atlOrigin=eyJpIjoiZDcwYTliODdlNGZmNDQ4NDkyY2RiOTUyMGI1NjgyMTAiLCJwIjoiaiJ9
+57,Phone: user cannot put special characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter special characters in Phone field,special characters(invalid),,9725648542#4,,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-26?atlOrigin=eyJpIjoiYTc3NDI1YWVjZjMxNGVmNTg4ZjM5YWVlMDNhZWI2ZmIiLCJwIjoiaiJ9
+58,Phone: user can put + symbol,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter + symbol in Phone field,"symbol ""+""(valid)",,+165842596351,,Phone number is accepted,Phone number is accepted,Phone number is accepted,Phone number is accepted,
+59,Phone: user cannot put dashes,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dashes in Phone field,dashes(invalid),,45258469-526,,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-27?atlOrigin=eyJpIjoiZDhlMGZiNjViNzQwNGVjZGIwYTUzMTZkOTczODJmYWQiLCJwIjoiaiJ9
+60,Phone: user cannot put commas,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter commas in Phone field,commas(invalid),,"45258469,526",,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-28?atlOrigin=eyJpIjoiZWYzNzM3ODc3OGRkNGNmZmEzNWNhN2E0YTRmODA5ZGMiLCJwIjoiaiJ9
+61,Phone: user cannot put dots,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter dots in Phone field,dots(invalid),,45258469.526,,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-29?atlOrigin=eyJpIjoiY2MxZjM2MjNlYjFlNDM5MzgxZmNkMDY2OWY3ZDk2MTQiLCJwIjoiaiJ9
+62,Phone: user cannot put spaces,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter spaces in Phone field,spaces(invalid),,45258469 526,,"The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-30?atlOrigin=eyJpIjoiNjYyYjEwNzIyMjdlNDM3YTllY2Y0MzkyMzE3MjgxNjUiLCJwIjoiaiJ9
+63,Phone: user cannot put phone number without + symbol,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter numbers and + symbol in Phone field,"numbers and symbol""+""(valid)",,+165842596351,,Phone number is accepted,Phone number is accepted,Phone number is accepted,Phone number is accepted,
+64,Phone: user cannot put 9 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 9 characters in Phone field,<10 characters(invalid),"9 characters, 10 characters, 11 characters",+165842596,"+165842596, +1658425963, +16584259635","The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-31?atlOrigin=eyJpIjoiNWFhYTM3YTc1ZDNkNDExN2IzMTE4YTIxZmQ5NmE3ODYiLCJwIjoiaiJ9
+65,Phone: user can put 10 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 10 characters in Phone field,10-12 characters(valid),"9 characters, 10 characters, 11 characters, 12 characters, 13 characters",+1658425963,"+165842596, +1658425963, +16584259635, +165842596351, +1658425963514",Phone number is accepted,Phone number is accepted,Phone number is accepted,Phone number is accepted,
+66,Phone: user can put 11 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 11 characters in Phone field,10-12 characters(valid),"9 characters, 10 characters, 11 characters, 12 characters, 13 characters",+16584259635,"+165842596, +1658425963, +16584259635, +165842596351, +1658425963514",Phone number is accepted,Phone number is accepted,Phone number is accepted,Phone number is accepted,
+67,Phone: user can put 12 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 12 characters in Phone field,10-12 characters(valid),"9 characters, 10 characters, 11 characters, 12 characters, 13 characters",+165842596351,"+165842596, +1658425963, +16584259635, +165842596351, +1658425963514",Phone number is accepted,Phone number is accepted,Phone number is accepted,Phone number is accepted,
+68,Phone: user cannot put 13 characters,"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 13 characters in Phone field,>12 characters(invalid),"11 characters, 12 characters, 13 characters",+1658425963514,"+16584259635, +165842596351, +1658425963514","The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-32?atlOrigin=eyJpIjoiMTBmM2YwYmNhN2U5NDk1YmFiNDRkYjNhZmNmNmRkNGMiLCJwIjoiaiJ9
+69,Phone: user cannot put 13 characters(only digits),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 13 digits in Phone field,>12 characters(invalid),"11 characters, 12 characters, 13 characters",1658425963514,"16584259635, 165842596351, 1658425963514","The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""",Phone number is accepted,Phone number is accepted,Phone number is accepted,https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-34?atlOrigin=eyJpIjoiM2QwNGFiNGMzNWY5NDA1NmI0YTdjNjZiZGQ2MTE1N2EiLCJwIjoiaiJ9
+70,Phone: user cannot put 12 characters(only digits),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 12 digits in Phone field,no + sign(invalid),"11 characters, 12 characters, 13 characters",165842596351,"16584259635, 165842596351, 1658425963514","The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""",Phone number is accepted,Phone number is accepted,Phone number is accepted,https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-35?atlOrigin=eyJpIjoiMTdlNGE2NDMwYmQwNDhjNzgzOGI1YTBkYmFiMzcxZmEiLCJwIjoiaiJ9
+71,Phone: user cannot put 11 characters(only digits),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 11 digits in Phone field,no + sign(invalid),"11 characters, 12 characters, 13 characters",16584259635,"16584259635, 165842596351, 1658425963514","The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""",Phone number is accepted,Phone number is accepted,Phone number is accepted,https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-36?atlOrigin=eyJpIjoiZGQ5NWRjYjc3NDgyNGRjZjgzODEyNTA0MjNmOGQ2MGEiLCJwIjoiaiJ9
+72,Phone: user cannot put 10 characters(only digits),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 10 digits in Phone field,no + sign(invalid),"9 characters, 10 characters, 11 characters, 12 characters, 13 characters",1658425963,"165842596, 1658425963, 16584259635, 165842596351, 1658425963514","The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-32?atlOrigin=eyJpIjoiMjgzN2FlMGUxZTUwNDA1ZjgxNTM1YTUyODRkNWQxOWYiLCJwIjoiaiJ9
+73,Phone: user cannot put 9 characters(only digits),"-  Start server: [https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com](https://cnt-65c9a63f-c20c-4a16-a168-c73099a2e146.containerhub.tripleten-services.com/);
+- Open website, press Agree in popup window about cookies and press Order button;",- Enter 9 digits in Phone field,no + sign(invalid),"9 characters, 10 characters, 11 characters, 12 characters, 13 characters",165842596,"165842596, 1658425963, 16584259635, 165842596351, 1658425963514","The field is highlighted in red. The
+error text is ""Enter a valid phone
+number.""","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+","The field is highlighted in red. The
+error text is ""Enter a valid 
+number.""
+",https://ulyanamalyutina60195.atlassian.net/browse/USBRUM-32?atlOrigin=eyJpIjoiMjgzN2FlMGUxZTUwNDA1ZjgxNTM1YTUyODRkNWQxOWYiLCJwIjoiaiJ9

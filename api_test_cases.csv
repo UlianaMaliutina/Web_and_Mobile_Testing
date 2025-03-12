@@ -1,0 +1,395 @@
+ID,Test Case,Precondition,Test Steps,Test Data (Request Body),Expected Result,Actual Result,Status,Jira Bug Link
+1,User should be able to create a courier,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+2,User cannot create a courier without password,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login and firstName in request body.
+","{
+    ""login"": ""ninja"",
+    ""firstName"": ""saske""
+}","Status 400 Bad Request with message ""Not enough data to create an account""","Status 400 Bad Request with message ""Not enough data to create an account""",Passed,
+3,User login should be unique,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName(duplicating) in request body.
+","{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","Status 409 Сonflict with message ""This login is not available""","Status 409 Сonflict with message ""This login is not available""",Passed,
+4,User can use Latin letters for login,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""buddha"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+5,"Login, password hash, and courier's name must be written in the login, passwordHash
+and firstName fields of the Couriers table","Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+
+3. Connect to database from terminal: psql -U morty -d scooter_rent(password: smith)
+
+4. Create a courier ","Put in the terminal: 
+
+SELECT 
+    * 
+FROM 
+    ""Couriers"";","The login, password hash, and courier's name must be written in the login, passwordHash and firstName fields of the Couriers table","The login, password hash, and courier's name must be written in the login, passwordHash and firstName fields of the Couriers table",Passed,
+6,Login cannot be <2 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login(1 character), password and firstName in request body.
+","{
+    ""login"": ""n"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","Status 409 Сonflict with message ""This login is not available""",Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-1?atlOrigin=eyJpIjoiNTlhNzFhZjk4Yjc4NGU1ZmI1NzhkZmZhY2I2ZDc5YTYiLCJwIjoiaiJ9
+7,User cannot create a courier without login,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using password and firstName in request body.
+","{
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","Status 400 Bad Request with message ""Not enough data to create an account""","Status 400 Bad Request with message ""Not enough data to create an account""",Passed,
+8,Login can be 2 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login(2 character), password and firstName in request body.
+","{
+    ""login"": ""na"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+9,Login can be 3 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login(3 character), password and firstName in request body.
+","{
+    ""login"": ""nin"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+10,Login can be 9 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login(9 character), password and firstName in request body.
+","{
+    ""login"": ""ninjanjan"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+11,Login can be 10 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login(10 character), password and firstName in request body.
+","{
+    ""login"": ""ninjanjana"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+12,Login cannot be >10 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login(11 character), password and firstName in request body.
+","{
+    ""login"": ""ninjanjana"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","Status 409 Сonflict with message ""This login is not available""",Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-2?atlOrigin=eyJpIjoiZjVlYzUxOTBmMmVmNGVmN2IwM2YwMGM3ZTM1MjYwMGEiLCJwIjoiaiJ9
+13,Login cannot contain non-Latin characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""כלב"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","Status 409 Сonflict with message ""This login is not available""",Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-3?atlOrigin=eyJpIjoiOWEwYjdmOGUxYzk0NDk2Y2I4ZDc5YjE4Mzg1ZWNlNjciLCJwIjoiaiJ9
+14,Login cannot contain numbers,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninja1"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}","Status 409 Сonflict with message ""This login is not available""",Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-4?atlOrigin=eyJpIjoiYjA1ZWYzM2E0NmUyNDZjMjk1N2RhODczYzVkYjQ0N2YiLCJwIjoiaiJ9
+15,Password cannot contain Latin letters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninjsa"",
+    ""password"": ""12a4"",
+    ""firstName"": ""saske""
+}",Status 409 Сonflict ,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-5?atlOrigin=eyJpIjoiZGJhN2Y4Njg4MzMxNGVlN2I1ZmIzNmY3ZmZmZGRhY2EiLCJwIjoiaiJ9
+16,Password cannot contain non-Latin letters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninjaa"",
+    ""password"": ""12מ4"",
+    ""firstName"": ""saske""
+}",Status 409 Сonflict ,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-6?atlOrigin=eyJpIjoiODQ5NGEzYjg2MGE1NGNhMGFiYTQxNWE2MmZlODNlYTMiLCJwIjoiaiJ9
+17,Password can contain only numbers,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+18,Password cannot contain <4 letters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninjera"",
+    ""password"": ""123"",
+    ""firstName"": ""saske""
+}",Status 409 Сonflict ,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-7?atlOrigin=eyJpIjoiNjlmYTM5ZDA2Y2U3NDhmZGE1MjkwZmY2NDA0ZjMxY2EiLCJwIjoiaiJ9
+19,Password can contain 4 letters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninsja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+20,Password cannot contain >4 letters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninseja"",
+    ""password"": ""12345"",
+    ""firstName"": ""saske""
+}",Status 409 Сonflict ,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-8?atlOrigin=eyJpIjoiODhmNDJkYWE4YTIyNDY4YTkzZDAyNjVhMDZlNDEzYjIiLCJwIjoiaiJ9
+21,User can create a courier without firstName,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login and password in request body.
+","{
+    ""login"": ""nianja"",
+    ""password"": ""1234""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+22,firstName cannot be <2 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""niernja"",
+    ""password"": ""1234"",
+    ""firstName"": ""s""
+}",Status 409 Сonflict ,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-9?atlOrigin=eyJpIjoiODNiN2ZjZDIyMWYxNDVkOTkyNjQwNGRjM2YwMzJlMGMiLCJwIjoiaiJ9
+23,firstName can be 2 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninsfdja"",
+    ""password"": ""1234"",
+    ""firstName"": ""sa""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+24,firstName can be 3 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""eeninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""sas""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+25,firstName can be 9 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""nisdfnja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saskesask""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+26,firstName can be 10 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saskesaske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+27,firstName cannot be >10 characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninsderfja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saskesaskes""
+}",Status 409 Сonflict,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-10?atlOrigin=eyJpIjoiZmI2ZTQzNDA1N2MzNGU5ZDkwMmQ0YzE1ZTJjZjdlZDMiLCJwIjoiaiJ9
+28,firstName cannot contain non-Latin characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""nija"",
+    ""password"": ""1234"",
+    ""firstName"": ""הידחג""
+}",Status 409 Сonflict,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-11?atlOrigin=eyJpIjoiZDg3YzBkZTNkZTA4NDRlM2FhZGExMzA2ZmNhNmQ0NWIiLCJwIjoiaiJ9
+29,firstName cannot contain dashes,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""nnja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske.""
+}",Status 409 Сonflict,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-12?atlOrigin=eyJpIjoiOWIxZjRkMzUxNjI3NGEyOGExMDY1NWRmNWZlZjNjMjgiLCJwIjoiaiJ9
+30,firstName cannot contain special characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninjia"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske&""
+}",Status 409 Сonflict,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-13?atlOrigin=eyJpIjoiZjlhYzc5ZmRlY2NiNGUwOWI0MGM3MTIwYzM0OGRhOGMiLCJwIjoiaiJ9
+31,firstName cannot contain spaces ,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninjfra"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske kon""
+}",Status 409 Сonflict,Status 201 CREATED,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-14?atlOrigin=eyJpIjoiNDQzMmZmYzk5ZmRhNDE2MjllNDA4MmMyOGQ3NzZjYzMiLCJwIjoiaiJ9
+32,firstName can contain only Latin characters,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects POST request with URL + /api/v1/courier
+
+2. The user sends a request by using login, password and firstName in request body.
+","{
+    ""login"": ""ninjsrewa"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}",Status 201 CREATED,Status 201 CREATED,Passed,
+33,User can delete a courier,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects DELETE request with URL + /api/v1/courier/:id 
+
+2. The user sends a request by using courier ID
+","{
+    ""id"": ""1""
+}",Status 200 OK,Status 200 OK,Passed,
+34,User cannot delete a courier without ID,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects DELETE request with URL + /api/v1/courier/:id 
+
+2. The user sends a request without courier ID
+","{
+    ""id"": """"
+}","400 Bad Request with message:  ""Not enough data to remove the courier""
+",500 Internal Server Error,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-15?atlOrigin=eyJpIjoiMzVmOGIxNTEzNzc3NDBhMmFhNTg0NDYzODAyMjA4YzciLCJwIjoiaiJ9
+35,User cannot delete a courier with non-existent ID,"Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects DELETE request with URL + /api/v1/courier/:id 
+
+2. The user sends a request with courier ID
+","{
+    ""id"": ""9726709823750""
+}","404 Not Found with message: ""There's no courier with this ID""
+","404 Not Found with message: ""There's no courier with this ID""
+",Passed,
+36,"Deletion of a courier must erase linked
+orders in the Orders table","Start server;
+
+Put ssh <username>@<host> -p <port> into terminal","1. The user selects DELETE request with URL + /api/v1/courier/:id 
+
+2. The user sends a request with courier ID
+
+3. Connect to database from terminal: psql -U morty -d scooter_rent(password: smith)
+
+4. Create a courier ","Put in the terminal: 
+
+SELECT * FROM ""Orders"" WHERE ""courierId"" = 1;",All the data about orders should be deleted,Data about orders after deleting the courier isn't erased from the Orders table,Failed,https://ulyanamalyutina60195.atlassian.net/browse/CADT-16?atlOrigin=eyJpIjoiNDg4OWZlNDdkNWU5NGYyYTlhZjY0YTA0MDkwMWEzNzAiLCJwIjoiaiJ9
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,Passed,

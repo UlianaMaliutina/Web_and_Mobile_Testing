@@ -1,0 +1,508 @@
+ID,Test Case,Precondition,Test Steps,Expected Result,Actual Result,Status,Jira Bug Link
+1,Notification about uncompleted order with a delivery deadline set for the same day should popup at 9:59pm,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Wait until 9:59 pm",The notification comes at 9:59 pm as a push to the phone,Notification didn't come to the phone and there're duplication of this order in My orders list,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-1?atlOrigin=eyJpIjoiMTAzYzBkZmU0MDg5NDU3OWE3MzZhYTBkZGM2MTBhNDYiLCJwIjoiaiJ9
+2,Notification about uncompleted order with a delivery deadline set for the same day shouldn't popup at 9:58pm,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:57 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Wait until 9:58 pm",Notification didn't come,Notification didn't come,PASSED,
+3,Notification about uncompleted order with a delivery deadline set for the same day should be already at 10.00pm,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Wait until 10.00 pm","The notification comes at 9:59 pm as a push to the phone, at 10.00 pm it's already on the screen",Notification didn't come to the phone and there're duplication of this order in My orders list,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-7?atlOrigin=eyJpIjoiZGRiZGJjYWIyY2VmNDRlN2EzMTY2NDhhYTk4MTIzODIiLCJwIjoiaiJ9
+4,Push notification shouldn't popup on completed orders,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list, then tick the order as delivered
+-Wait until 9:59 pm",No notifications about delivery ,No notifications about delivery,PASSED,
+5,"Notification text on uncompleted order: ""2 hours to the end of the order. The order
+""State St 1214"" must be completed before time X. If you can't make it in time, alert
+support: 0101"".","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Wait until 9:59 pm","Push notification at phone with text: ""2 hours to the end of the order. The order
+""State St 1214"" must be completed before time X. If you can't make it in time, alert
+support: 0101"".",No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-2?atlOrigin=eyJpIjoiYTMwZThkMWZlNzMzNDUzOThjYzM0YmUzNDU0NzQ5NDAiLCJwIjoiaiJ9
+6,Notification on uncompleted order when the app is minimized,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Minimize the app
+-Wait until 9:59 pm","Push notification at phone with text: ""2 hours to the end of the order. The order
+""State St 1214"" must be completed before time X. If you can't make it in time, alert
+support: 0101"".",No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-8?atlOrigin=eyJpIjoiNzgyOTZjMmNkZjhkNDZmN2I3OTEwZjljNzVlNmJmYjMiLCJwIjoiaiJ9
+7,Notification on uncompleted order when the phone screen isn't active,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Block phone screen
+-Wait until 9:59 pm","Push notification at phone with text: ""2 hours to the end of the order. The order
+""State St 1214"" must be completed before time X. If you can't make it in time, alert
+support: 0101"".",No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-9?atlOrigin=eyJpIjoiOGUyNTA2MGI5NjIwNDA0MTg5YzVlZWQyMmI2MjQ5OTIiLCJwIjoiaiJ9
+8,Notification on uncompleted order when the app is closed,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Close the app
+-Wait until 9:59 pm","Push notification at phone with text: ""2 hours to the end of the order. The order
+""State St 1214"" must be completed before time X. If you can't make it in time, alert
+support: 0101"".",No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-10?atlOrigin=eyJpIjoiMzhmODlkMDczMTFkNGEzZTg5MjIwY2JkNzRiNGQ3NmUiLCJwIjoiaiJ9
+9,Notification push should contain Urban Scooter logo and name in the upper body,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Wait until 9:59 pm",Push notification contains Urban Scooter logo and name in the left upper corner,No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-3?atlOrigin=eyJpIjoiN2E1ZmMxY2ViZGU5NDQ4ZmIzNjcyOWY0NmYzMGZkODYiLCJwIjoiaiJ9
+10,"Tap on notification(while using application) should lead to the ""My orders"" tab in the application.","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list
+-Wait until 9:59 pm",Notification tapped leads to My orders section with delivery which should be completed untill 11:59 pm,No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-4?atlOrigin=eyJpIjoiOTJmOWYyMzUzYjUxNDJkNGE2NGYwYmM2ZjFlMTBiNzgiLCJwIjoiaiJ9
+11,"Tap on notification(while app is minimized) should lead to the ""My orders"" tab in the application.","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list, minimize the app
+-Wait until 9:59 pm",Notification tapped leads to My orders section with delivery which should be completed untill 11:59 pm,No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-8?atlOrigin=eyJpIjoiNzgyOTZjMmNkZjhkNDZmN2I3OTEwZjljNzVlNmJmYjMiLCJwIjoiaiJ9
+12,"Tap on notification(while phone screen is blocked) should lead to the ""My orders"" tab in the application.","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list, block the phone screen
+-Wait until 9:59 pm",Notification tapped leads to My orders section with delivery which should be completed untill 11:59 pm,No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-9?atlOrigin=eyJpIjoiOGUyNTA2MGI5NjIwNDA0MTg5YzVlZWQyMmI2MjQ5OTIiLCJwIjoiaiJ9
+13,"Tap on notification(while app is closed) should lead to the ""My orders"" tab in the application.","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Clock app→ Settings→ Change date&time
+-Set time(9:58 pm)
+-Go to Urban Scooter application
+-Check that you picked up an order from the list, close the app
+-Wait until 9:59 pm",Notification tapped leads to My orders section with delivery which should be completed untill 11:59 pm,No notifications about delivery,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-10?atlOrigin=eyJpIjoiMzhmODlkMDczMTFkNGEzZTg5MjIwY2JkNzRiNGQ3NmUiLCJwIjoiaiJ9
+14,"The ""No Internet access"" pop-up window should be displayed if there's no internet","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to any active button","Pop-up window ""No Internet access"" appears","Pop-up window ""No Internet access"" appears",PASSED,
+15,"Tapping on Login screen without Internet connection should display pop-up window ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Logout from Urban Scooter app
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Enter login and password
+
+-Tap Login button","Pop-up window ""No Internet access"" appears","Error ""Unable to resolve the host https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com""",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-11?atlOrigin=eyJpIjoiOWZiZjU0YTRhZTYxNDRmNmJmNjk0OTk5OGQ2ZTExNjMiLCJwIjoiaiJ9
+16,"Tapping on Active orders without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to Active Orders button","Pop-up window ""No Internet access"" appears","Pop-up window ""No Internet access"" appears",PASSED,
+17,"Tapping on logout button without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to logout button","Pop-up window ""No Internet access"" appears",Tapping on upper right corner(logout sign) offers to logout from app,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-5?atlOrigin=eyJpIjoiZGJkNjMxNzk3ZTU0NDU0OWJjMjllMDUwYTQ2OWRiNjMiLCJwIjoiaiJ9
+18,"Tapping on My Orders without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to My Orders button","Pop-up window ""No Internet access"" appears","Pop-up window ""No Internet access"" appears",PASSED,
+19,"Tapping on filter button without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to filter button","Pop-up window ""No Internet access"" appears",Filter button opens and allows to apply filters to Active Orders,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-12?atlOrigin=eyJpIjoiMjlmYjMwYTk3ODNmNDI0YzkzMjVkZmZmYjdkZTE5NjYiLCJwIjoiaiJ9
+20,"Tapping on Accept button on Active Orders screen without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to Accept button on Active Orders screen","Pop-up window ""No Internet access"" appears","Pop-up window ""No Internet access"" appears",PASSED,
+21,"Tapping on Login screen on I don't remember password button without Internet connection should display pop-up window ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Logout from Urban Scooter app
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Enter login 
+
+-Tap I don't remember password button","Pop-up window ""No Internet access"" appears","Pop-up window ""Contact the manager"" is displayed",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-13?atlOrigin=eyJpIjoiMjAzYmM2Y2YyNTYwNDg3Njk0NmRhZmFkZjAxYjVhYzYiLCJwIjoiaiJ9
+22,Clicking the ? icon on Login screen(right low corner) expands the field of URL,"- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Logout from Urban Scooter app
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap ? button","Pop-up window ""No Internet access"" appears",The field for URL expands,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-14?atlOrigin=eyJpIjoiZmMzNmUzMmQ0NzNiNDJlMGI1NmI0YTFlMTdlYzQ0ODUiLCJwIjoiaiJ9
+23,"Tapping on Complete button on My Orders screen without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to Complete button on My Orders screen","Pop-up window ""No Internet access"" appears","Pop-up window ""No Internet access"" appears",PASSED,
+24,"""No Internet access"" pop-up window should close only after tapping Ok","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","- Open Settings→ WiFi
+- Disable WiFi
+- Go to Urban Scooter app
+- Tap to any active button
+- in pop-up window “No Internet access” tap Ok button","Pop-up window ""No Internet access"" closes only after tapping button Ok","Pop-up window ""No Internet access"" closes after tapping at any area except for this pop-up window",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-6?atlOrigin=eyJpIjoiNTYxMzZhZjQ5NWNhNGI1ODlkYzE0ODgzMDI5OGE5MzkiLCJwIjoiaiJ9
+25,"""No Internet access"" pop-up window should contain text ""Check the connection or wait for a notification that it has been restored""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to any active button","Pop-up window ""No Internet access"" contains text ""Check the connection or wait for a notification that it has been restored""","Pop-up window ""No Internet access"" contains text ""Check the connection or wait for a notification that it has been restored""",PASSED,
+26,"""No Internet access"" pop-up window should contain button ""ok""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to any active button","Pop-up window ""No Internet access"" contains button Ok","Pop-up window ""No Internet access"" contains button Ok",PASSED,
+27,"Tapping on logout button with proseeding to Yes without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to logout button, then click Yes","Pop-up window ""No Internet access"" appears",Tapping on Yes in Logout screen logs out the user,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-15?atlOrigin=eyJpIjoiY2RhOGI0YTUzNTFlNGI0NDkyYjU2ODZjZTcyZDg0YzIiLCJwIjoiaiJ9
+28,"Tapping on logout button with proseeding to No without internet connection should display ""No Internet access""","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","-Open Settings→ WiFi
+
+-Disable WiFi
+
+-Go to Urban Scooter app
+
+-Tap to logout button, then click No","Pop-up window ""No Internet access"" appears","Tapping on No in Logout screen closes pop-up window without notification ""No Internet access""",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-16?atlOrigin=eyJpIjoiZWVhNmFiNTFhYTYyNDI3ZmE0MDk3Y2M4YTUyZmRiMzciLCJwIjoiaiJ9
+29,"""No Internet access"" pop-up window should should contain button Ok","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","- Open Settings→ WiFi
+- Disable WiFi
+- Go to Urban Scooter app
+- Tap to any active button
+- in pop-up window “No Internet access” check Ok button","Pop-up window ""No Internet access"" contains button Ok",Button OK is uppercase,FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-17?atlOrigin=eyJpIjoiYmVmYWYwM2IyODEyNGU4OWFlNWFkNTc3ZDM1Y2E2MjciLCJwIjoiaiJ9
+30,"On the Active Orders screen after clicking Accept button(on the pop-up window Would you like to accept the order click No) without Internet connection should be ""No Internet connection"" displayed","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","- Open Active orders- click Accept button(pop-up window Would you like to accept order)
+- Disable WiFi
+- Go to Urban Scooter app
+- Tap to No button
+","Pop-up window ""No Internet access""","Clicking No button closes the pop-up window Would you like to accept the order without notification ""No Internet access""",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-18?atlOrigin=eyJpIjoiOTFmNWJiOWE2NWRjNDMzMWE3YzdiODUxZmJjNmY2M2YiLCJwIjoiaiJ9
+31,"On the Active Orders screen after clicking Accept button(on the pop-up window Would you like to accept the order click Yes) without Internet connection should be ""No Internet connection"" displayed","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","- Open Active orders- click Accept button(pop-up window Would you like to accept order)
+- Disable WiFi
+- Go to Urban Scooter app
+- Tap Yes button
+","Pop-up window ""No Internet access""","Clicking Yes button closes the pop-up window Would you like to accept the order without notification ""No Internet access"" ",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-19?atlOrigin=eyJpIjoiZjhiYThlMDkzZmRkNGNhZmE4ZjdlMTViZWMyMzg5MmQiLCJwIjoiaiJ9
+32,"On the My Orders screen after clicking Complete button(on the pop-up window Have you completed the order) without Internet connection should be ""No Internet connection"" displayed","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","- Open My orders- click Complete button(pop-up window Have you completed the order)
+- Disable WiFi
+- Go to Urban Scooter app
+- Tap to Yes button
+","Pop-up window ""No Internet access""","Clicking Yes button closes the pop-up window Have you completed the order without notification ""No Internet access"" ",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-20?atlOrigin=eyJpIjoiNzA1NDkzYWMwMDI3NGY0ZWI0Y2IyZjM3Y2ViMDE1NTYiLCJwIjoiaiJ9
+33,"On the My Orders screen after clicking Complete button(on the pop-up window Have you completed the order) without Internet connection should be ""No Internet connection"" displayed","- Start the server: 
+-Launch the application from https://practicum-content.s3.us-west-1.amazonaws.com/qa-us/app/Sprint9/Urban%20Scooter.apk
+-Create courier: open Postman, POST+https://cnt-09e6a267-5f2b-434a-ba02-987523514ff0.containerhub.tripleten-services.com/api/v1/courier, request in body(raw JSON):
+{
+    ""login"": ""ninja"",
+    ""password"": ""1234"",
+    ""firstName"": ""saske""
+}
+-Login to the mobile app
+-Create an order from web and take an order through the mobile app","- Open My orders- click Complete button(pop-up window Have you completed the order)
+- Disable WiFi
+- Go to Urban Scooter app
+- Tap to No button
+","Pop-up window ""No Internet access""","Clicking No button closes the pop-up window Have you completed the order without notification ""No Internet access"" ",FAILED,https://ulyanamalyutina60195.atlassian.net/browse/USMAUM-21?atlOrigin=eyJpIjoiZWFlNzRlMmY4YWNhNDBiZGEyOGU1NTllNGUyMWRlMTkiLCJwIjoiaiJ9
