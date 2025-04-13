@@ -1,4 +1,4 @@
-# Urban Scooter App & Web Testing
+# Urban Scooter Web & Mobile App Testing
 
 ## Project Description
 This project focuses on testing both the **Urban Scooter Web App** and **Urban Scooter Mobile App** to ensure that their functionalities meet the specified requirements. The testing covers form validation, mobile app authentication, API interactions, and backend functionalities.
